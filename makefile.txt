@@ -1,0 +1,12 @@
+COMPILER = gcc
+EXES = search
+all: ${EXES}
+
+search: hw2.c
+	${COMPILER} -o hw2 hw2.c
+
+%.o: %.c %.h  makefile
+	${COMPILER} $< -c 
+
+clean:
+	rm -f *.o *~ ${EXES} ${CFILES}
